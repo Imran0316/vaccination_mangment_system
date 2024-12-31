@@ -32,7 +32,7 @@ if(isset($_POST["signup"])){
     $uemail=$_POST["email"];
     $upassword=$_POST["password"];
 
-    $connection=mysqli_connect("localhost","root","","vac_signup");
+    $connection=mysqli_connect("localhost","root","","signup");
     $query="INSERT INTO `signup_det`(`name`, `email`, `password`) VALUES ('$uname','$uemail','$upassword')";
 
     $run=mysqli_query($connection,$query);
