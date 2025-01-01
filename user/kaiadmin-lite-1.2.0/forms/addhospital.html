@@ -180,14 +180,17 @@
               <li class="nav-item active submenu">
                 <a data-bs-toggle="collapse" href="#forms">
                   <i class="fas fa-pen-square"></i>
-                  <p>Forms</p>
+                  <p>Hospital</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse show" id="forms">
                   <ul class="nav nav-collapse">
                     <li class="active">
-                      <a href="../forms/forms.html">
-                        <span class="sub-item">Basic Form</span>
+                      <a href="../forms/addhospital.html">
+                        <span class="sub-item">Add Hospital</span>
+                      </a>
+                      <a href="../forms/showhospital.html">
+                        <span class="sub-item">Show Hospital</span>
                       </a>
                     </li>
                   </ul>
@@ -712,7 +715,7 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">Forms</h3>
+              <h3 class="fw-bold mb-3">Hospiatls</h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="#">
@@ -723,13 +726,13 @@
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">vaccination registration form</a>
+                  <a href="#">Add Hospitals</a>
                 </li>
                 <li class="separator">
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">child detail form</a>
+                  <a href="#">Hospiatls detail form</a>
                 </li>
               </ul>
             </div>
@@ -737,29 +740,23 @@
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <div class="card-title">Child & vaccination details</div>
+                    <div class="card-title">Hospital details</div>
                   </div>
                   <div class="card-body">
                     <div class="row">
                       
                       <div class="col-lg-6 col-md-8">
-                        <label for="cname" class="form-label text-dark">Child Name:</label>
-                        <input type="text" class="form-control" placeholder="Child Name" name="cname"> <br>
+                        <label for="hos_name" class="form-label text-dark">Hospital Name:</label>
+                        <input type="text" class="form-control" placeholder="Hospital Name" name="hos_name"> <br>
 
-                        <label for="dob" class="form-label text-dark">Date Of Birth:</label>
-                        <input type="date" class="form-control" name="dob"> <br>
+                        <label for="hos_email" class="form-label text-dark">Hospital Email:</label>
+                        <input type="email" class="form-control" placeholder=" Hospital Email" name="hos_address"> <br>
+                        
+                        <label for="hos_address" class="form-label text-dark">Hospital Address:</label>
+                        <input type="text" class="form-control" placeholder=" Hospital Address" name="hos_address"> <br>
 
-                        <label for="cage" class="form-label text-dark">Child Age:</label>
-                        <input type="number" class="form-control" placeholder="Child Age" name="age"> <br>
-
-                        <label for="pname" class="form-label text-dark">Parent Name:</label>
-                        <input type="text" class="form-control" placeholder="Parent Name" name="pname"> <br>
-
-                        <label for="pemail" class="form-label text-dark">Parent Email:</label>
-                        <input type="email" class="form-control" placeholder="Parent Email" name="pemail"> <br>
-
-                        <label for="pcont" class="form-label text-dark">Parent Contact:</label>
-                        <input type="tel" class="form-control" placeholder="Parent Contact" name="pcont"> <br>
+                        <label for="hos_cont" class="form-label text-dark">Hospital Contact:</label>
+                        <input type="tel" class="form-control" placeholder="Hospital Contact" name="hos_cont"> <br>
 
                         
                         
