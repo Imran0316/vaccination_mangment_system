@@ -41,7 +41,7 @@ if(isset($_POST["login"])){
             $_SESSION['id'] = $_SESSION['id'];
             $_SESSION['email'] = $_SESSION['email'];
             $_SESSION['password'] = $_SESSION['password'];
-            header("location: user/kaiadmin-lite-1.2.0/index.html");
+            header("location: user/kaiadmin-lite-1.2.0/index.php");
             
         }elseif($rows['id'] == 2){
             $_SESSION['id'] = $_SESSION['id'];

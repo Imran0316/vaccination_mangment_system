@@ -41,6 +41,39 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="../assets/css/demo.css" />
   </head>
+  <?php 
+if(isset($_POST["hos_sub"])){
+    $ho_name=$_POST["hos_name"];
+    $ho_email=$_POST["hos_email"];
+    $ho_address=$_POST["hos_address"];
+    $ho_cont=$_POST["hos_cont"];
+    $ho_city=$_POST["hos_city"];
+    $ho_optime=$_POST["hos_opt"];
+    $ho_clotime=$_POST["hos_clot"];
+    // $himage_name=$_FILES["hos_img"];
+    // $himage_path=$_FILES["hos_img"]["temp_name"];
+    // move_uploaded_file($himage_path, "img/" . $himage_name);
+    // $targetDir = "uploads/";
+    // $targetFile = $targetDir . basename($himage_name['name']);
+    // $uploadOk = 1;
+  $error="";
+
+    $connection=mysqli_connect("localhost","root","","vaccine_mang");
+   
+   
+    $quer="INSERT INTO `hospital_det`( `hosp_name`, `hosp_email`, `hosp_address`, `hosp_contact`, `hosp_city`, `hosp_opt`, `hosp_clot`) VALUES ('$ho_name','$ho_email','$ho_address','$ho_cont','$ho_city','$ho_optime','$ho_clotime')";
+    
+    $run=mysqli_query($connection,$quer);
+    if($run){
+      $error = "running" ;
+    }else{
+     $error = "not run";
+    }
+
+
+
+}
+  ?>
   <body>
     <div class="wrapper">
       <!-- Sidebar -->
@@ -48,7 +81,7 @@
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
-            <a href="../index.html" class="logo">
+            <a href="../index.php" class="logo">
               <img
                 src="../assets/img/kaiadmin/logo_light.svg"
                 alt="navbar brand"
@@ -87,7 +120,7 @@
                 <div class="collapse" id="dashboard">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../../demo1/index.html">
+                      <a href="../../demo1/index.php">
                         <span class="sub-item">Dashboard 1</span>
                       </a>
                     </li>
@@ -109,47 +142,47 @@
                 <div class="collapse" id="base">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../components/avatars.html">
+                      <a href="../components/avatars.php">
                         <span class="sub-item">Avatars</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../components/buttons.html">
+                      <a href="../components/buttons.php">
                         <span class="sub-item">Buttons</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../components/gridsystem.html">
+                      <a href="../components/gridsystem.php">
                         <span class="sub-item">Grid System</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../components/panels.html">
+                      <a href="../components/panels.php">
                         <span class="sub-item">Panels</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../components/notifications.html">
+                      <a href="../components/notifications.php">
                         <span class="sub-item">Notifications</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../components/sweetalert.html">
+                      <a href="../components/sweetalert.php">
                         <span class="sub-item">Sweet Alert</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../components/font-awesome-icons.html">
+                      <a href="../components/font-awesome-icons.php">
                         <span class="sub-item">Font Awesome Icons</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../components/simple-line-icons.html">
+                      <a href="../components/simple-line-icons.php">
                         <span class="sub-item">Simple Line Icons</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../components/typography.html">
+                      <a href="../components/typography.php">
                         <span class="sub-item">Typography</span>
                       </a>
                     </li>
@@ -165,12 +198,12 @@
                 <div class="collapse" id="sidebarLayouts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../sidebar-style-2.html">
+                      <a href="../sidebar-style-2.php">
                         <span class="sub-item">Sidebar Style 2</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../icon-menu.html">
+                      <a href="../icon-menu.php">
                         <span class="sub-item">Icon Menu</span>
                       </a>
                     </li>
@@ -186,10 +219,10 @@
                 <div class="collapse show" id="forms">
                   <ul class="nav nav-collapse">
                     <li class="active">
-                      <a href="../forms/addhospital.html">
+                      <a href="../forms/addhospital.php">
                         <span class="sub-item">Add Hospital</span>
                       </a>
-                      <a href="../forms/showhospital.html">
+                      <a href="../forms/showhospital.php">
                         <span class="sub-item">Show Hospital</span>
                       </a>
                     </li>
@@ -205,12 +238,12 @@
                 <div class="collapse" id="tables">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../tables/tables.html">
+                      <a href="../tables/tables.php">
                         <span class="sub-item">Basic Table</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../tables/datatables.html">
+                      <a href="../tables/datatables.php">
                         <span class="sub-item">Datatables</span>
                       </a>
                     </li>
@@ -226,12 +259,12 @@
                 <div class="collapse" id="maps">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../maps/googlemaps.html">
+                      <a href="../maps/googlemaps.php">
                         <span class="sub-item">Google Maps</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../maps/jsvectormap.html">
+                      <a href="../maps/jsvectormap.php">
                         <span class="sub-item">Jsvectormap</span>
                       </a>
                     </li>
@@ -247,12 +280,12 @@
                 <div class="collapse" id="charts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../charts/charts.html">
+                      <a href="../charts/charts.php">
                         <span class="sub-item">Chart Js</span>
                       </a>
                     </li>
                     <li>
-                      <a href="../charts/sparkline.html">
+                      <a href="../charts/sparkline.php">
                         <span class="sub-item">Sparkline</span>
                       </a>
                     </li>
@@ -260,14 +293,14 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a href="../widgets.html">
+                <a href="../widgets.php">
                   <i class="fas fa-desktop"></i>
                   <p>Widgets</p>
                   <span class="badge badge-success">4</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../../documentation/index.html">
+                <a href="../../../documentation/index.php">
                   <i class="fas fa-file"></i>
                   <p>Documentation</p>
                   <span class="badge badge-secondary">1</span>
@@ -335,7 +368,7 @@
           <div class="main-header-logo">
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="dark">
-              <a href="../index.html" class="logo">
+              <a href="../index.php" class="logo">
                 <img
                   src="../assets/img/kaiadmin/logo_light.svg"
                   alt="navbar brand"
@@ -686,7 +719,7 @@
                             <h4>Hizrian</h4>
                             <p class="text-muted">hello@example.com</p>
                             <a
-                              href="profile.html"
+                              href="profile.php"
                               class="btn btn-xs btn-secondary btn-sm"
                               >View Profile</a
                             >
@@ -736,21 +769,24 @@
                 </li>
               </ul>
             </div>
+            <form action="" method="post" >
+              <div class="card">
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
                     <div class="card-title">Hospital details</div>
+                    <span><?php echo $error; ?></span>
                   </div>
                   <div class="card-body">
                     <div class="row">
-                      
+                     
                       <div class="col-lg-6 col-md-8">
                         <label for="hos_name" class="form-label text-dark">Hospital Name:</label>
                         <input type="text" class="form-control" placeholder="Hospital Name" name="hos_name"> <br>
 
                         <label for="hos_email" class="form-label text-dark">Hospital Email:</label>
-                        <input type="email" class="form-control" placeholder=" Hospital Email" name="hos_address"> <br>
+                        <input type="email" class="form-control" placeholder=" Hospital Email" name="hos_email"> <br>
                         
                         <label for="hos_address" class="form-label text-dark">Hospital Address:</label>
                         <input type="text" class="form-control" placeholder=" Hospital Address" name="hos_address"> <br>
@@ -764,25 +800,31 @@
 
                       </div>
                       <div class="col-lg-6 col-md-8">
-                        <label for="vac_name">Vaccine Name:</label><br> 
+                        <label for="hos_city" class="form-label text-dark" >City Name:</label><br> 
+                        <input type="text" class="form-control" name="hos_city" placeholder="City Name"><br>
 
-                        <select name="vac_name" class="form-select">
-                          <option value="Select vaccine name">Select vaccine name</option>
-                          <option value="Poliovirus Vaccine">Poliovirus Vaccine</option>
-                          <option value="Rotavirus Vaccine">Rotavirus Vaccine</option>
-                          <option value="Varicella Vaccine">Varicella Vaccine</option>
-                          <option value="Pneumococcal Conjugate Vaccine">Pneumococcal Conjugate Vaccine</option>
-                        </select>
+                        <label for="hos_opt" class="form-label text-dark" >Opening Time:</label><br> 
+                        <input type="time" class="form-control" name="hos_opt" placeholder="Opening Time"><br>
+
+                        <label for="hos_clot" class="form-label text-dark" >Closing Time:</label><br> 
+                        <input type="time" class="form-control" name="hos_clot" placeholder="Closing Time"><br>
+
+                        <!-- <label for="hos_img" class="form-label text-dark" >Hospital Image:</label><br> 
+                        <input type="file" class="form-control" name="hos_img" ><br> -->
+
+                        
                       </div>
-                     
+                     </div>
                     </div>
                   </div>
                   <div class="card-action">
-                    <button class="btn btn-success">Submit</button>
+                    
+                    <input type="submit" value="submit" name="hos_sub" class="btn btn-primary">
                     <button class="btn btn-danger">Cancel</button>
                   </div>
                 </div>
               </div>
+            </form>
             </div>
           </div>
         </div>
